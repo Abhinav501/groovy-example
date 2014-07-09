@@ -1,6 +1,10 @@
 # dot-gitignore
 
 # Compiled files
-build/
+out/
+
+# Misc files
+misc/
 
 # IntelliJ config files
+.idea/

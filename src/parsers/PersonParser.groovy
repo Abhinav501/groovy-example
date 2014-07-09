@@ -22,13 +22,14 @@ class PersonParser {
      * @param filename -
      * @return a <code>List</code> of <code>Person</code> objects.
      */
-    List<Person> parseXML(String filename) {
+    static List<Person> parseXML(String filename) {
         List<Person> personList = []
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd")
 
         Node persons = new XmlParser().parse(filename)
         persons.person.each {
-            Person person = new Person(name: it.name,id: it.id, born: dateFormat.parse(it.born))
+            Person person = new Person(name: it.name.text(), id: it.id.text().toInteger(),
+                    born: dateFormat.parse(it.born.text()))
             personList.add(person)
         }
 

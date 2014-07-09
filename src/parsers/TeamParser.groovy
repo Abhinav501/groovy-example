@@ -19,7 +19,7 @@ class TeamParser {
      * @param filename -
      * @return a <code>List</code> of <code>Person</code> objects.
      */
-    List<Team> parseCSV(String filename) {
+    static List<Team> parseCSV(String filename) {
         List<Team> teams = []
 
         def csvFile = new File(filename)
@@ -29,11 +29,12 @@ class TeamParser {
             if (columns.length > 0) {
                 String name = columns[0]
                 Team team = new Team(name: name)
-                columns.drop(0)
+                columns = columns.drop(1)
 
                 columns.each { colIt ->
                     team.addTeamMember(colIt.toInteger())
                 }
+                teams.add(team)
             }
         }
 

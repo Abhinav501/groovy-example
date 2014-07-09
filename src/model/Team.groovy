@@ -33,12 +33,22 @@ class Team {
     }
 
     /**
-     * Return the <code>Person</code> ID of the specified index.
+     * Returns the <code>Person</code> ID of the specified index.
      *
      * @param index - the index of the <code>Person</code> ID to be retrieved.
+     * @return the <code>Person</code> ID of the specified index.
      */
-    void getTeamMember(int index) {
-        members.get(index)
+     int getTeamMember(int index) {
+        return members.get(index)
+    }
+
+    /**
+     * Returns the <List> of <code>Person</code> IDs on the team.
+     *
+     * @return the <List> of <code>Person</code> IDs on the team.
+     */
+    List<Integer> getTeamMembers() {
+        return members
     }
 
     /**
