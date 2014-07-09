@@ -12,9 +12,11 @@ class Person {
 
     // --*-- Fields --*--
 
+    static final DateFormat bornFormat = new SimpleDateFormat("yyyy-MM-dd")
+
     String name = ""
     Integer id = 0
-    Date born = new SimpleDateFormat("yyyy-MM-dd").parse("1970-01-01")
+    Date born = bornFormat.parse("1970-01-01")
 
     // --*-- Methods --*--
 
@@ -24,9 +26,8 @@ class Person {
      * @return a <code>String</code> description of the <code>Person</code>.
      */
     String toString() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd")
         "model.Person{ name : ${name}, id : ${id}, " +
-                "born : ${dateFormat.format(born)} }"
+                "born : ${bornFormat.format(born)} }"
     }
 
 }

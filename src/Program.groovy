@@ -6,7 +6,7 @@ import parsers.PersonParser
 import parsers.TeamParser
 
 /**
- * Executes the program
+ * Captures the main script of the program.
  *
  * @author Peter Urbak
  * @version 2014-07-09
@@ -14,7 +14,7 @@ import parsers.TeamParser
 class Program {
 
     /**
-     *
+     * Executes the program.
      */
     static void main(String[] args) {
 
@@ -59,7 +59,8 @@ class Program {
         Team oldestTeam = teams.get(oldestTeamIndex)
         String teamDescription = "${oldestTeam.getName()}"
         oldestTeam.getMembers().each { member ->
-            teamDescription = teamDescription + ", ${personMap.get(member)}"
+            teamDescription = teamDescription +
+                    ", ${personMap.get(member).getName()}"
         }
         println teamDescription
 

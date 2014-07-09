@@ -17,7 +17,9 @@ Simply navigate to the `src` folder and run
 While the coding example is rather small I deliberately chose a very structured
 approach where:
 
-- There is a parser class for each data file that needs parsing.
+- There is a parser class for each data file that needs parsing. (alternatively
+  each of the classes could have been reduced to just a function as no state is
+  saved).
 - There is a model class for each type of data objects collected from the parsed
   files.
 - There are unit tests for every class of the project.

@@ -2,11 +2,9 @@ package parsers
 
 import model.Person
 
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-
 /**
  * Parses XML files containing person descriptions.
+ * Expects properly formatted and consistent input.
  *
  * @author Peter Urbak
  * @version 2014-07-09
@@ -19,18 +17,18 @@ class PersonParser {
      * Parses an XML file containing person descriptions and returns a
      * <code>List</code> of <code>Person</code> objects.
      *
-     * @param filename -
+     * @param filename - the path of the XML file to be parsed.
      * @return a <code>List</code> of <code>Person</code> objects.
      */
     static List<Person> parseXML(String filename) {
         List<Person> personList = []
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd")
 
         Node persons = new XmlParser().parse(filename)
         persons.person.each {
-            Person person = new Person(name: it.name.text(),
-                    id: it.id.text().toInteger(),
-                    born: dateFormat.parse(it.born.text()))
+            String name = it.name.text()
+            int id = it.id.text().toInteger()
+            Date born = Person.bornFormat.parse(it.born.text())
+            Person person = new Person(name: name, id: id, born: born)
             personList.add(person)
         }
 
