@@ -43,24 +43,31 @@ class Program {
 
         teams.each { teamIt ->
             int teamAge = 0
+
             teamIt.getMembers().each { member ->
                 Date memberBorn = personMap.get(member).getBorn()
                 TimeDuration age = TimeCategory.minus(now, memberBorn)
                 teamAge += age.days
             }
+
             if (teamAge > oldestTeamAge) {
                 oldestTeamAge = teamAge
                 oldestTeamIndex = teamIndex
             }
+
             teamIndex++
         }
 
         // Print oldest team
         Team oldestTeam = teams.get(oldestTeamIndex)
-        String teamDescription = "${oldestTeam.getName()}"
-        oldestTeam.getMembers().each { member ->
-            teamDescription = teamDescription +
-                    ", ${personMap.get(member).getName()}"
+        String teamDescription = oldestTeam.getName()
+        List<String> namesInTeam = oldestTeam.getMembers().collect { member ->
+            personMap.get(member).getName()
+        }
+        namesInTeam.sort()
+
+        namesInTeam.each { name ->
+            teamDescription = teamDescription + ", ${name}"
         }
         println teamDescription
 
