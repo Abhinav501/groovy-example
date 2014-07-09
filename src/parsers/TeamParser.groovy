@@ -32,7 +32,7 @@ class TeamParser {
                 columns = columns.drop(1)
 
                 columns.each { colIt ->
-                    team.addTeamMember(colIt.toInteger())
+                    team.getMembers().add(colIt.toInteger())
                 }
                 teams.add(team)
             }

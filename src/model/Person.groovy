@@ -25,7 +25,8 @@ class Person {
      */
     String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd")
-        "model.Person{ name : ${name}, id : ${id}, born : ${dateFormat.format(born)} }"
+        "model.Person{ name : ${name}, id : ${id}, " +
+                "born : ${dateFormat.format(born)} }"
     }
 
 }

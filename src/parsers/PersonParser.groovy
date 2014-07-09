@@ -16,8 +16,8 @@ class PersonParser {
     // --*-- Methods --*--
 
     /**
-     * Parses an XML file containing person descriptions and returns a <code>List</code>
-     * of <code>Person</code> objects.
+     * Parses an XML file containing person descriptions and returns a
+     * <code>List</code> of <code>Person</code> objects.
      *
      * @param filename -
      * @return a <code>List</code> of <code>Person</code> objects.
@@ -28,7 +28,8 @@ class PersonParser {
 
         Node persons = new XmlParser().parse(filename)
         persons.person.each {
-            Person person = new Person(name: it.name.text(), id: it.id.text().toInteger(),
+            Person person = new Person(name: it.name.text(),
+                    id: it.id.text().toInteger(),
                     born: dateFormat.parse(it.born.text()))
             personList.add(person)
         }
