@@ -1,4 +1,4 @@
-package model
+package main.groovy.model
 
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -26,7 +26,7 @@ class Person {
      * @return a <code>String</code> description of the <code>Person</code>.
      */
     String toString() {
-        "model.Person{ name : ${name}, id : ${id}, " +
+        "main.groovy.model.Person{ name : ${name}, id : ${id}, " +
                 "born : ${bornFormat.format(born)} }"
     }
 

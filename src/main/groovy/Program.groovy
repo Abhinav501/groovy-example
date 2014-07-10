@@ -1,9 +1,11 @@
+package main.groovy
+
 import groovy.time.TimeCategory
 import groovy.time.TimeDuration
-import model.Person
-import model.Team
-import parsers.PersonParser
-import parsers.TeamParser
+import main.groovy.model.Person
+import main.groovy.model.Team
+import main.groovy.parsers.PersonParser
+import main.groovy.parsers.TeamParser
 
 /**
  * Captures the main script of the program.
@@ -61,8 +63,8 @@ class Program {
         // Print oldest team
         Team oldestTeam = teams.get(oldestTeamIndex)
         String teamDescription = oldestTeam.getName()
-        List<String> namesInTeam = oldestTeam.getMembers().collect { member ->
-            personMap.get(member).getName()
+        List<String> namesInTeam = oldestTeam.getMembers().collect {
+            member -> personMap.get(member).getName()
         }
         namesInTeam.sort()
 

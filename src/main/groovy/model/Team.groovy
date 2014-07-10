@@ -1,4 +1,4 @@
-package model
+package main.groovy.model
 /**
  * Specifies a <code>Team</code> object.
  *
@@ -20,7 +20,7 @@ class Team {
      * @return a <code>String</code> description of the <code>Team</code>.
      */
     String toString() {
-        "model.Team{ name : ${name}, members : ${members} }"
+        "main.groovy.model.Team{ name : ${name}, members : ${members} }"
     }
 
 }

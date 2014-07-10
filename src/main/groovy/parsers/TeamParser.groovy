@@ -1,6 +1,6 @@
-package parsers
+package main.groovy.parsers
 
-import model.Team
+import main.groovy.model.Team
 
 /**
  * Parses CSV files containing team descriptions.

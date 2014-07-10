@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<persons>
+  <person>
+    <name>Carl Poulsen</name>
+    <id>1</id>
+    <born>1977-02-09</born>
+  </person>
+
+  <person>
+    <name>Hans Jensen</name>
+    <id>2</id>
+    <born>1979-11-09</born>
+  </person>
+
+  <person>
+    <name>Peter Hansen</name>
+    <id>3</id>
+    <born>1929-03-01</born>
+  </person>
+
+  <person>
+    <name>Niels Nielsen</name>
+    <id>4</id>
+    <born>1989-04-12</born>
+  </person>
+
+</persons>

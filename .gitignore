@@ -1,10 +1,11 @@
 # dot-gitignore
 
 # Compiled files
-out/
-
-# Misc files
-misc/
+build/
 
 # IntelliJ config files
 .idea/
+*.iml
+
+# Gradle stuff
+.gradle
