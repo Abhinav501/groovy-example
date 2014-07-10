@@ -1,20 +1,20 @@
 Groovy example
 ============
 
-1. Description
+## Description
 
 The following program parses two files, an XML file and a CSV file, containing a
 description of persons and teams, respectively, and outputs a description of
 the team who has the combined oldest age across its members.
 
-2. Installation and execution
+## Installation and execution
 
 Simply navigate to the `src/main/groovy/` folder and run,
 `$ groovy Program.groovy /path/to/Persons.xml /path/to/Groups.txt`
 e.g.,
 `$ groovy Program.groovy ../../../test-data/Persons.xml ../../../test-data/Groups.txt`
 
-3. Design choices
+## Design choices
 
 While the coding example is rather small I deliberately chose a very structured
 approach to reflect the way I would deal with a 'real world' problem:
