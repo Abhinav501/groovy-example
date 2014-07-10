@@ -9,18 +9,23 @@ The following program parses two files, an XML file and a CSV file, containing
 
 2. Installation and execution
 
-Simply navigate to the `src` folder and run
-`$ groovy main.groovy.Program.groovy /path/to/Persons.xml /path/to/Groups.txt`
+Simply navigate to the `src/main/groovy` folder and run,
+`$ groovy Program.groovy /path/to/Persons.xml /path/to/Groups.txt`
+e.g.,
+`$ groovy Program.groovy ../../../test-data/Persons.xml ../../../test-data/Groups.txt`
 
 3. Design choices
 
 While the coding example is rather small I deliberately chose a very structured
-approach where:
+approach to reflect the way I would deal with a 'real world' problem:
 
-- There is a parser class for each data file that needs parsing. (alternatively
+- There is a parser class for each data file that needs parsing. Alternatively,
   each of the classes could have been reduced to just a function as no state is
-  saved).
-- There is a main.groovy.model class for each type of data objects collected from the parsed
+  saved when parsing.
+- There is a model class for each type of data objects collected from the parsed
   files.
-- There are unit tests for every class of the project.
-- There are integration tests to test the flow of the application.
+- There are unit tests for every class of the project. Some of these are a bit
+  contrived due to the size of the classes.
+- There are integration/system tests to test the flow of the application.
+- I use gradle to build the project and manage its dependencies as it is also
+  written in groovy and works great for both Java/Groovy and Android development.

@@ -26,7 +26,7 @@ class Person {
      * @return a <code>String</code> description of the <code>Person</code>.
      */
     String toString() {
-        "main.groovy.model.Person{ name : ${name}, id : ${id}, " +
+        "Person{ name : ${name}, id : ${id}, " +
                 "born : ${bornFormat.format(born)} }"
     }
 

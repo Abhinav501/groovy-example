@@ -6,7 +6,7 @@ import model.Person
  * Expects properly formatted and consistent input.
  *
  * @author Peter Urbak
- * @version 2014-07-09
+ * @version 2014-07-10
  */
 class PersonParser {
 
@@ -19,7 +19,7 @@ class PersonParser {
      * @param filename - the path of the XML file to be parsed.
      * @return a <code>List</code> of <code>Person</code> objects.
      */
-    static List<Person> parseXML(String filename) {
+    List<Person> parseXML(String filename) {
         List<Person> personList = []
 
         Node persons = new XmlParser().parse(filename)

@@ -7,12 +7,18 @@ import model.Team
 import parsers.PersonParser
 import parsers.TeamParser
 /**
- * Captures the main script of the program.
+ * Prints the description of the team with the highest combined age.
  *
  * @author Peter Urbak
- * @version 2014-07-09
+ * @version 2014-07-10
  */
 class Program {
+
+    // --*-- Fields --*--
+
+    Map<Integer, Person> personMap = [:]
+
+    // --*-- Methods --*--
 
     /**
      * Executes the program.
@@ -26,17 +32,35 @@ class Program {
                     "2. A CSV file containing team descriptions."
         }
 
+        Program program = new Program()
+
         // Parse input files
         String xmlPath = args[0]
         String csvPath = args[1]
-        List<Team> teams = TeamParser.parseCSV(csvPath)
-        List<Person> persons = PersonParser.parseXML(xmlPath)
-        Map<Integer, Person> personMap = new HashMap<>();
+        TeamParser teamParser = new TeamParser()
+        List<Team> teams = teamParser.parseCSV(csvPath)
+        PersonParser personParser = new PersonParser()
+        List<Person> persons = personParser.parseXML(xmlPath)
         persons.each { person ->
-            personMap.put(person.getId(), person)
+            program.getPersonMap().put(person.getId(), person)
         }
 
-        // Calculate "oldest" team
+        // Calculate and print oldest team
+        Team oldestTeam = program.calculateOldestTeam(teams)
+        String teamDescription = program.composeTeamDescription(oldestTeam)
+        println teamDescription
+
+    }
+
+    /**
+     * Calculates the <code>Team</code> with the highest combined age across its
+     * members.
+     *
+     * @return the <code>Team</code> with the highest combined age across its
+     * members.
+     */
+    Team calculateOldestTeam(List<Team> teams) {
+
         int oldestTeamIndex = 0
         int oldestTeamAge = 0
         int teamIndex = 0
@@ -46,7 +70,7 @@ class Program {
             int teamAge = 0
 
             teamIt.getMembers().each { member ->
-                Date memberBorn = personMap.get(member).getBorn()
+                Date memberBorn = getPersonMap().get(member).getBorn()
                 TimeDuration age = TimeCategory.minus(now, memberBorn)
                 teamAge += age.days
             }
@@ -59,18 +83,27 @@ class Program {
             teamIndex++
         }
 
-        // Print oldest team
-        Team oldestTeam = teams.get(oldestTeamIndex)
-        String teamDescription = oldestTeam.getName()
-        List<String> namesInTeam = oldestTeam.getMembers().collect {
-            member -> personMap.get(member).getName()
+        return teams.get(oldestTeamIndex)
+    }
+
+    /**
+     * Creates a description of the specified <code>Team</code> containing the
+     * team name and the names of every member sorted alphabetically.
+     *
+     * @param team -
+     * @param personMap -
+     * @return a description of the specified team
+     */
+    String composeTeamDescription(Team team) {
+        String teamDescription = team.getName()
+        List<String> namesInTeam = team.getMembers().collect {
+            member -> getPersonMap().get(member).getName()
         }
         namesInTeam.sort()
 
         namesInTeam.each { name ->
             teamDescription = teamDescription + ", ${name}"
         }
-        println teamDescription
-
+        return teamDescription
     }
 }

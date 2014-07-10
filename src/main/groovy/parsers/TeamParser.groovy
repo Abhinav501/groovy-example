@@ -7,7 +7,7 @@ import model.Team
  * in the team name.
  *
  * @author Peter Urbak
- * @version 2014-07-09
+ * @version 2014-07-10
  */
 class TeamParser {
 
@@ -20,7 +20,7 @@ class TeamParser {
      * @param filename - the path of the CSV file to be parsed.
      * @return a <code>List</code> of <code>Person</code> objects.
      */
-    static List<Team> parseCSV(String filename) {
+    List<Team> parseCSV(String filename) {
         List<Team> teams = []
 
         def csvFile = new File(filename)

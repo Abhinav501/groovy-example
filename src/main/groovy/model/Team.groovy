@@ -3,7 +3,7 @@ package model
  * Encapsulates a <code>Team</code> object.
  *
  * @author Peter Urbak
- * @version 2014-07-09
+ * @version 2014-07-10
  */
 class Team {
 
@@ -20,7 +20,7 @@ class Team {
      * @return a <code>String</code> description of the <code>Team</code>.
      */
     String toString() {
-        "main.groovy.model.Team{ name : ${name}, members : ${members} }"
+        "Team{ name : ${name}, members : ${members} }"
     }
 
 }
