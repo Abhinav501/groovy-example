@@ -1,15 +1,15 @@
-Silverbullet
+Groovy example
 ============
 
 1. Description
 
-The following program parses two files, an XML file and a CSV file, containing
- a description of persons and teams, respectively, and outputs a description of
- the team who has the combined oldest age across its members.
+The following program parses two files, an XML file and a CSV file, containing a
+description of persons and teams, respectively, and outputs a description of
+the team who has the combined oldest age across its members.
 
 2. Installation and execution
 
-Simply navigate to the `src/main/groovy` folder and run,
+Simply navigate to the `src/main/groovy/` folder and run,
 `$ groovy Program.groovy /path/to/Persons.xml /path/to/Groups.txt`
 e.g.,
 `$ groovy Program.groovy ../../../test-data/Persons.xml ../../../test-data/Groups.txt`
