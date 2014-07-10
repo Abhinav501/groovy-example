@@ -9,3 +9,6 @@ build/
 
 # Gradle stuff
 .gradle
+
+# OS/X garbage
+.DS_Store
