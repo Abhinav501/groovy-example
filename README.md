@@ -1,13 +1,14 @@
 Groovy example
 ============
-
-## Description
-
 The following program parses two files, an XML file and a CSV file, containing a
 description of persons and teams, respectively, and outputs a description of
 the team who has the combined oldest age across its members.
 
-## Installation and execution
+## Installation
+
+Simply run `$ gradle build`.
+
+## Execution
 
 Simply navigate to the `src/main/groovy/` folder and run,
 `$ groovy Program.groovy /path/to/Persons.xml /path/to/Groups.txt`
