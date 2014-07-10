@@ -1,6 +1,6 @@
-package main.groovy.model
+package model
 /**
- * Specifies a <code>Team</code> object.
+ * Encapsulates a <code>Team</code> object.
  *
  * @author Peter Urbak
  * @version 2014-07-09

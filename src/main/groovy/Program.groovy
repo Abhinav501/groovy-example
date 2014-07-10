@@ -1,12 +1,11 @@
-package main.groovy
-
 import groovy.time.TimeCategory
 import groovy.time.TimeDuration
-import main.groovy.model.Person
-import main.groovy.model.Team
-import main.groovy.parsers.PersonParser
-import main.groovy.parsers.TeamParser
 
+import model.Person
+import model.Team
+
+import parsers.PersonParser
+import parsers.TeamParser
 /**
  * Captures the main script of the program.
  *

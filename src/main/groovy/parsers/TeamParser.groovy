@@ -1,7 +1,6 @@
-package main.groovy.parsers
+package parsers
 
-import main.groovy.model.Team
-
+import model.Team
 /**
  * Parses CSV files containing team descriptions.
  * Expects properly formatted and consistent input where there are no commas

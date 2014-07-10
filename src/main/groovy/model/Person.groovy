@@ -1,12 +1,12 @@
-package main.groovy.model
+package model
 
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 /**
- * Specifies a <code>Person</code> object.
+ * Encapsulates a <code>Person</code> object.
  *
  * @author Peter Urbak
- * @version 2014-07-09
+ * @version 2014-07-10
  */
 class Person {
 

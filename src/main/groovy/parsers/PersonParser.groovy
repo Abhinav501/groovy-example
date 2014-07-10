@@ -1,7 +1,6 @@
-package main.groovy.parsers
+package parsers
 
-import main.groovy.model.Person
-
+import model.Person
 /**
  * Parses XML files containing person descriptions.
  * Expects properly formatted and consistent input.
